@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World1/Entities/firer/firer.gd" type="Script" id=1]
+[ext_resource path="res://World1/Entities/firer/firer.png" type="Texture" id=2]
+
+[node name="StaticBody2D" type="StaticBody2D" groups=[
+"firer",
+]]
+
+scale = Vector2( 0.125, 0.125 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+fireWaitTime = 0.1
+rotationSpeed = 2
+hitpoints = 4
+firing = false
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -276.8, 1.96521, -280.41, 74.1653, -256.042, 184.27, -195.574, 319.646, -126.984, 427.946, -80.0544, 493.828, 85.1033, 492.926, 182.573, 342.208, 246.651, 209.54, 278.239, 98.5328, 280.044, 16.4052, 280.946, -64.8199, 254.773, -190.267, 203.331, -303.983, 141.961, -405.063, 84.2008, -488.995, -78.2493, -490.8, -147.742, -403.258, -209.112, -287.738, -261.457, -163.192, -277.702, -69.3324 )
+
+[node name="barrel1" type="Node2D" parent="." index="2"]
+
+position = Vector2( 0.60938, -484.114 )
+scale = Vector2( 2.05725, 0.22569 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="barrel2" type="Node2D" parent="." index="3"]
+
+position = Vector2( -0.940308, 484.446 )
+scale = Vector2( 2.05725, 0.22569 )
+_sections_unfolded = [ "Transform" ]
+
+

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World1/Entities/slender/slender.gd" type="Script" id=1]
+[ext_resource path="res://World1/Entities/slender/slender.png" type="Texture" id=2]
+[ext_resource path="res://World1/Entities/slender/slenderDialogue.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 40, 30 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+position = Vector2( 399, 2831 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="slender" type="Sprite" parent="." index="0"]
+
+position = Vector2( -49, -31 )
+scale = Vector2( 2.17045, 2.14872 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -49, -11 )
+shape = SubResource( 1 )
+
+[node name="Dialogue" parent="." index="2" instance=ExtResource( 3 )]
+
+
